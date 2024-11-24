@@ -122,3 +122,6 @@ action="/edit/<%= item._id %>?_method=DELETE" method="post"
 username
 email
 password
+
+
+/*"type": "module",/* to use the latest update ES6 */

@@ -36,6 +36,10 @@ router.get("/", authController.get_welcome);
 // GET Requst
 router.get("/home", requireAuth, userController.user_index_get);
 
+router.get("/user/add.html", requireAuth, userController.user_add_get);
+
+router.post("/user/add.html", requireAuth, userController.user_post);
+
 router.get("/edit/:id", requireAuth, userController.user_edit_get);
 
 router.get("/user/:id", requireAuth, userController.user_view_get);//user

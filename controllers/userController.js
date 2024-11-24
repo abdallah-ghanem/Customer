@@ -2,9 +2,8 @@ const AuthUser = require("../models/authUser");
 const Customer = require("../models/customerSchema");
 var moment = require("moment");
 var jwt = require('jsonwebtoken');
-
-//   /home
-//    done
+//====================================================================================================
+//  home
 const user_index_get = (req, res) => {
     var decoded = jwt.verify(req.cookies.jwt, process.env.JWT_SECRET_KEY);
 
@@ -20,25 +19,21 @@ const user_index_get = (req, res) => {
             console.log(err);
         });
 };
-
-
+//====================================================================================================
+const user_add_get = (req, res) => {
+    res.render("user/add");
+};
+//====================================================================================================
 const user_post = (req, res) => {
     Customer.create(req.body)
         .then(() => {
             res.redirect("/home");
         })
-        .catch((err) => {
+        .catch((err) => { 
             console.log(err);
         });
 };
-
-
-
-
-
-
-
-
+//====================================================================================================
 const user_edit_get = (req, res) => {
     Customer.findById(req.params.id)
         .then((result) => {
@@ -48,7 +43,7 @@ const user_edit_get = (req, res) => {
             console.log(err);
         });
 };
-
+//====================================================================================================
 const user_view_get = (req, res) => {
     // result ==> object
     Customer.findById(req.params.id)
@@ -59,7 +54,7 @@ const user_view_get = (req, res) => {
             console.log(err);
         });
 };
-
+//====================================================================================================
 const user_search_post = (req, res) => {
     console.log("*******************************");
 
@@ -74,7 +69,7 @@ const user_search_post = (req, res) => {
             console.log(err);
         });
 };
-
+//====================================================================================================
 const user_delete = (req, res) => {
     Customer.deleteOne({ _id: req.params.id })
         .then((result) => {
@@ -85,7 +80,7 @@ const user_delete = (req, res) => {
             console.log(err);
         });
 };
-
+//====================================================================================================
 const user_put = (req, res) => {
     Customer.updateOne({ _id: req.params.id }, req.body)
         .then((result) => {
@@ -95,13 +90,7 @@ const user_put = (req, res) => {
             console.log(err);
         });
 };
-
-const user_add_get = (req, res) => {
-    res.render("user/add");
-};
-
-
-
+//====================================================================================================
 module.exports = {
     user_index_get,
     user_edit_get,
