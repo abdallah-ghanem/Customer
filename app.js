@@ -23,7 +23,6 @@ app.use(cookieParser())
 require('dotenv').config()
 const port = process.env.PORT || 3001;
 //====================================================================================================
-
 /* // Auto refresh
 const path = require("path");
 const livereload = require("livereload");
