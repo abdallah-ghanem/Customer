@@ -9,7 +9,7 @@ const requireAuth = (req, res, next) => {
             if (err) {
                 res.redirect("/login");
             } else {
-                next();
+                next();//pass control to the next middleware or route handler.
             }
         });
     } else {

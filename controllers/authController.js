@@ -44,6 +44,7 @@ const post_signup = async (req, res) => {
         console.log(error);
     }
     console.log(jwt)
+    console.log(token)
 };
 
 const post_login = async (req, res) => {

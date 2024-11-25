@@ -88,7 +88,7 @@
                     email: exampleInputEmail1.value,
                     password: exampleInputPassword1.value,
                 }),
-                headers: { "Content-Type": "application/json" },
+                headers: { "Content-Type": "application/json" },//tells the server that the data being sent in the request body is in JSON format
             });
 
             const data = await res.json();

@@ -10,7 +10,7 @@ const custmoerSchema = new Schema({
     age: String,
     country: String,
     gender: String,
-}, {timestamps: true});
+}, {timestamps: true});//to active created at and updated at
 
 // Create a model based on that schema
 const Customer = mongoose.model("Customer", custmoerSchema);

@@ -10,6 +10,7 @@ const authUserSchema = new Schema({
     password: String,
 }, {timestamps: true});
 
+//to hashing for password before saving it in DB
 authUserSchema.pre("save", async function (next) {
     const salt = await bcrypt.genSalt();
     this.password = await bcrypt.hash(this.password, salt);

@@ -5,7 +5,7 @@ var jwt = require('jsonwebtoken');
 //====================================================================================================
 //  home
 const user_index_get = (req, res) => {
-    var decoded = jwt.verify(req.cookies.jwt, process.env.JWT_SECRET_KEY);
+    var decoded = jwt.verify(req.cookies.jwt, process.env.JWT_SECRET_KEY);//decodes and verifies the JWT (JSON Web Token) sent in the request's cookies
 
     AuthUser.findById(decoded.id)
     Customer.find()
